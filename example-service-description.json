@@ -1,0 +1,26 @@
+{
+  "service_name": "test-service",
+  "eu": {
+      "production": {
+          "service_id": "eu_staging",
+          "container_memory": 1500,
+          "container_cpu": 256,
+          "egress": {
+              "allowed_ips": [
+                  "192.168.1.1:80",
+                  "192.168.1.1:443",
+                  "192.168.1.1:22",
+                  "192.168.1.254:23",
+                  "8.8.8.8:53",
+                  "8.8.4.5:53"
+              ],
+              "allowed_domains": [
+                  "facebook.com",
+                  "google.com",
+                  ".amazonaws.com",
+                  "npmjs.com"
+              ]
+          }
+      }
+  }
+}

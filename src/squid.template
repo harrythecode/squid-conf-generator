@@ -1,0 +1,35 @@
+###
+# Squid Config Generator v1.0, August 2018 by amezousan
+###
+
+### Default Policy
+# Allow HTTP methods
+acl allowed_methods method CONNECT GET POST HEAD
+
+# Define the default ports for http/https
+acl http_https_ports port 80 443
+
+#
+# Recommended secure configuration:
+#
+
+# Hide some information from a client via http/https protocol
+# HTTP_VIA 1.1 localhost (squid/3.5.20)
+#       -> 1.1 unknown (squid/3.5.20)
+visible_hostname unknown
+
+# HTTP_X_FORWARDED_FOR (Client IP Address)
+#                   -> unknown
+forwarded_for off
+
+# Remove the headers
+request_header_access Via deny all
+request_header_access X-FORWARDED-FOR deny all
+
+# Listen on 58080 port
+http_port 58080
+
+### Custom Policy
+#
+# Created configuration with the service description:
+#
